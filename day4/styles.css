@@ -1,0 +1,82 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(156, 73, 73);
+  border-radius: 8px;
+}
+
+.point1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 8px 4px 16px rgba(0, 0, 0, 0.4);
+  animation-fill-mode: both;
+  animation: grow3 cubic-bezier(0.21, 0.98, 0.6, 0.99) 2s infinite alternate;
+}
+.point2 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 8px 4px 16px rgba(0, 0, 0, 0.4);
+  animation-fill-mode: both;
+  animation: grow2 cubic-bezier(0.21, 0.98, 0.6, 0.99) 2s infinite alternate;
+}
+.point3 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 8px 4px 16px rgba(0, 0, 0, 0.4);
+  animation-fill-mode: both;
+  animation: grow1 cubic-bezier(0.21, 0.98, 0.6, 0.99) 2s infinite alternate;
+}
+
+@keyframes grow1 {
+  0%,
+  70% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes grow2 {
+  0%,
+  40% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes grow3 {
+  0%,
+  10% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
