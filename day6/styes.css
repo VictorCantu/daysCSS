@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(253, 182, 90);
+}
+.container {
+  width: 500px;
+  height: 400px;
+  background-color: rgb(253, 239, 221);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.infoPerfil {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.infoPerfil picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+
+    .outsideCircle {
+      transform: rotate(360deg);
+    }
+
+    .innerCircle {
+      transform: rotate(-360deg);
+    }
+  }
+}
+.infoPerfil picture img {
+  width: 128px;
+  height: 128px;
+}
+.infoPerfil picture .outsideCircle {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black black black transparent;
+  border-radius: 50%;
+  transition: all 1.5s ease;
+}
+.infoPerfil picture .innerCircle {
+  position: absolute;
+  width: 148px;
+  height: 148px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black transparent black black;
+  border-radius: 50%;
+  transition: all 1s ease;
+}
+.infoPerfil .textsPerfil .name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.infoPerfil .textsPerfil .occupation {
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.buttons .btn-perfil {
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: rgb(253, 239, 221);
+  padding: 8px 64px;
+  border-radius: 24px;
+  border: 2px solid rgb(94, 68, 35);
+  transition: 0.6s ease;
+}
+.buttons .btn-perfil:hover {
+  background-color: rgb(94, 68, 35);
+  color: rgb(253, 239, 221);
+}
+.data {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.data .numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(231, 210, 182);
+  color: rgb(94, 68, 35);
+  z-index: 10;
+}
+.data .numbers:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(197, 180, 155);
+  transition: 0.6s ease;
+  color: rgb(94, 68, 35);
+}
+.data .numbers span {
+  font-weight: 600;
+}
+.data .numbers p {
+  font-weight: 100;
+}
