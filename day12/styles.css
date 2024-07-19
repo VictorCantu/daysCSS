@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,400,300,300italic");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(20, 99, 99);
+  color: white;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(86, 184, 151);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 32px;
+  gap: 16px;
+}
+.container .text {
+  position: relative;
+}
+.container .text p {
+  z-index: 1;
+  font-size: 24px;
+  line-height: 35px;
+  margin: 20px 0;
+}
+.container .text .tooltip {
+  position: relative;
+  display: inline-block;
+  background: #286f8a;
+  padding: 0px 8px 5px 8px;
+  margin: -10px 0;
+  cursor: pointer;
+}
+.container .text .tooltip:hover .info, .container .text .tooltip:focus .info {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.container .text .tooltip .info {
+  position: absolute;
+  bottom: 56px;
+  left: -85px;
+  display: block;
+  background: #286f8a;
+  width: 300px;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: text;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate3d(0, -20px, 0);
+  transition: all 0.5s ease-out;
+}
+.container .text .tooltip .info:after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  bottom: -5px;
+  left: 50%;
+  margin-left: -5px;
+  background: #286f8a;
+}
+.container .text .tooltip .info .header {
+  display: block;
+  background-color: white;
+  color: #286f8a;
+  padding: 4px 8px;
+}
+.container .text .tooltip .info .data {
+  display: block;
+  padding: 4px 8px;
+}
+.container .text:before {
+  display: block;
+  position: absolute;
+  content: "„";
+  z-index: 0;
+  font-family: Arial;
+  font-size: 250px;
+  top: -200px;
+  left: -20px;
+  opacity: 0.3;
+}
