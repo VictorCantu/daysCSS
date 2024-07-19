@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:700,400");
+@import url("https://100dayscss.com/codepen/css/font-awesome.min.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #4c4c4c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: #3f3b3b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .background {
+    position: relative;
+    width: 224px;
+    height: 224px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b1717;
+    border: solid 8px #292626;
+    border-radius: 50%;
+    text-align: center;
+    color: azure;
+
+    @for $i from 1 through 15 {
+      .point-set-#{$i} {
+        position: absolute;
+        height: 188px;
+        width: 188px;
+        top: 10px;
+        left: 10px;
+        transform: rotate((($i - 1) * 6) + deg);
+
+        .point-1 {
+          position: absolute;
+          width: 2px;
+          height: 2px;
+          top: 0;
+          left: 93px;
+          background: #d3d3d3;
+          border-radius: 50%;
+        }
+
+        .point-2 {
+          @extend .point-1;
+          top: 93px;
+          left: auto;
+          right: 0;
+        }
+
+        .point-3 {
+          @extend .point-1;
+          top: auto;
+          bottom: 0;
+        }
+
+        .point-4 {
+          @extend .point-1;
+          top: 93px;
+          left: 0;
+        }
+      }
+    }
+    .data {
+      display: flex;
+      flex-direction: column;
+      .time {
+        display: flex;
+        flex-direction: column;
+        .date {
+          font-size: 14px;
+          line-height: 100%;
+        }
+        .hour {
+          font-size: 40px;
+        }
+      }
+      .info {
+        display: flex;
+        font-size: 12px;
+        flex-direction: row;
+        justify-content: space-between;
+        .beat {
+          display: flex;
+          gap: 2px;
+          img {
+            width: 12px;
+            height: 12px;
+            align-self: center;
+            animation: beat 0.9s ease-in-out infinite;
+          }
+        }
+      }
+    }
+    svg {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      transform: rotate(-90deg);
+      circle {
+        fill: transparent;
+        stroke: rgb(223, 46, 46);
+        stroke-width: 2;
+        stroke-dasharray: 627;
+        stroke-linecap: round;
+        transform-origin: center center;
+        animation: stroke 5s linear infinite;
+        // transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes stroke {
+  from {
+    stroke-dashoffset: 627;
+    transform: scaleY(1);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    transform: scaleY(1);
+  }
+  50.001% {
+    transform: scaleY(-1);
+  }
+  to {
+    stroke-dashoffset: 625;
+    transform: scaleY(-1);
+  }
+}
