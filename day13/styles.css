@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(39, 35, 35);
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .cont_img {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+}
+.container .cont_img img {
+  width: 196px;
+  height: 196px;
+}
+.container .cont_img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 196px;
+  height: 196px;
+  transition: all 0.4s ease-in-out;
+}
+.container .cont_img .plus {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  background-color: rgb(182, 69, 69);
+  opacity: 0;
+  transform: scale(2);
+  transition: all 0.4s ease-in-out;
+}
+.container .cont_img:hover .plus {
+  opacity: 1;
+  transform: scale(1);
+}
+.container .cont_img:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.container .detail {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  font-size: 0;
+  pointer-events: none;
+}
+.container .detail.active {
+  pointer-events: all;
+}
+.container .detail.active .image {
+  transform: translate3d(0, 0, 0);
+  transition: all 0.6s ease-out 0.3s;
+}
+.container .detail.active .header {
+  transform: translate3d(0, 0, 0);
+  transition: all 0.6s ease-out;
+}
+.container .detail.active .footer {
+  transform: translate3d(0, 0, 0);
+  transition: all 0.6s ease-out;
+}
+.container .image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 130px;
+  left: 150px;
+  border-radius: 50%;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.4);
+  transform: translate3d(0, -250%, 0);
+  transition: all 0.6s ease-in 0.2s;
+}
+.container .image img {
+  width: 100%;
+  height: auto;
+}
+.container .header {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background-color: rgb(22, 21, 21);
+  transform: translate3d(0, -250%, 0);
+  transition: all 0.6s ease-in 0.4s;
+}
+.container .header .close {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  width: 50px;
+  height: 50px;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  background-color: rgb(182, 69, 69);
+  transition: background 0.3s ease-in-out;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.container .header .close:before {
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 2px;
+  top: 24px;
+  left: 18px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.container .header .close:after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 14px;
+  top: 18px;
+  left: 24px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.container .header .close:hover {
+  background: #fff;
+}
+.container .header .close:hover:after, .container .header .close:hover:before {
+  background: rgb(182, 69, 69);
+}
+.container .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 220px;
+  background-color: rgb(182, 69, 69);
+  transform: translate3d(0, 250%, 0);
+  transition: all 0.6s ease-in 0.4s;
+}
+.container .footer p {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+}
+.container .footer .social {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+.container .footer .social .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: all 0.4s ease-out;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+.container .footer .social .btn:hover {
+  background-color: white;
+  color: rgb(182, 69, 69);
+}
+
+#detail {
+  display: block;
+}
