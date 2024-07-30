@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eee;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(21, 40, 80);
+  border-radius: 8px;
+  .center {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    .circle {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: rgb(31, 52, 97);
+    }
+    .inner-circle {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 6px solid rgb(31, 52, 97);
+      top: 0;
+      border-radius: 50%;
+    }
+    .shape {
+      position: absolute;
+      z-index: 2;
+      top: 65px;
+      left: 40px;
+      transform: translate3d(0, 0, 0);
+      fill: none;
+      stroke-width: 2px;
+      stroke: #ecf0f1;
+      stroke-linecap: square;
+      stroke-dasharray: 325 325;
+      &.mail {
+        top: 65px;
+        left: 40px;
+        stroke-dashoffset: 0;
+        // transition: 1s ease-in-out;
+      }
+      &.plane {
+        stroke-dashoffset: 325;
+        // transition: 1s ease-in-out 0.6s;
+      }
+    }
+    .btn-re {
+      position: absolute;
+      word-spacing: 2px;
+      font-weight: 300;
+      z-index: 4;
+      top: 224px;
+      width: 200px;
+      height: 40px;
+      border: none;
+      border-radius: 20px;
+      color: rgb(31, 52, 97);
+      background-color: rgb(213, 224, 248);
+      cursor: pointer;
+      display: none;
+      opacity: 0;
+      &:hover {
+        color: rgb(213, 224, 248);
+        background-color: rgb(38, 149, 223);
+      }
+    }
+    .btn {
+      word-spacing: 2px;
+      font-weight: 300;
+      width: 200px;
+      height: 40px;
+      border: none;
+      border-radius: 20px;
+      color: rgb(31, 52, 97);
+      background-color: rgb(213, 224, 248);
+      cursor: pointer;
+      &:hover {
+        color: rgb(213, 224, 248);
+        background-color: rgb(38, 149, 223);
+      }
+    }
+  }
+}
+@keyframes circle {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes innerCircle {
+  0% {
+    transform: scale(1);
+  }
+  50%,
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes fly {
+  0%,
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(100px, -100px, 0) scale(0);
+  }
+}
+@keyframes btn {
+  0% {
+    transform: scale(1);
+    color: rgb(213, 224, 248);
+    background-color: rgb(38, 149, 223);
+  }
+  30% {
+    color: transparent;
+    width: 200px;
+
+    background-color: rgb(38, 149, 223);
+  }
+  50%,
+  60% {
+    transform: scale(1);
+    width: 40px;
+    background-color: rgb(38, 149, 223);
+  }
+  70% {
+    transform: scale(1.1);
+    background-color: rgb(38, 149, 223);
+  }
+  100% {
+    width: 40px;
+    color: transparent;
+    transform: scale(0);
+    background-color: rgb(38, 149, 223);
+  }
+}
+@keyframes reset {
+  0%,
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
