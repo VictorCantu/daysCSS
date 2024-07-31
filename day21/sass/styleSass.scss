@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(31, 28, 28);
+}
+.container {
+  width: 400px;
+  height: 400px;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  .center {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    .pack {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 50px;
+      left: 50px;
+      fill: none;
+      stroke: #f4d146;
+      stroke-width: 50px;
+      stroke-linecap: butt;
+      stroke-dasharray: (50 * 3.14);
+      animation: mouth 0.7s ease-in-out infinite;
+    }
+    .eye {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 70px;
+      left: 100px;
+      fill: #2c2e2e;
+      animation: eye 0.7s ease-in-out infinite;
+    }
+    .dot {
+      position: absolute;
+      height: 14px;
+      width: 240px;
+      top: 95px;
+      left: 90px;
+      stroke: #f4d146;
+      stroke-width: 14px;
+      stroke-dasharray: 0px 50px;
+      stroke-linecap: round;
+      animation: points 0.7s linear infinite;
+    }
+  }
+}
+@keyframes mouth {
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  50% {
+    stroke-dashoffset: (50 * 3.14 / 4);
+    transform: rotate(45deg);
+  }
+}
+@keyframes eye {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-6px, -3px, 0);
+  }
+}
+@keyframes points {
+  0% {
+    stroke-dashoffset: 14;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    stroke-dashoffset: 64;
+  }
+}
