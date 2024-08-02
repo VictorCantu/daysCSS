@@ -13,3 +13,12 @@
 - Dia 12: Recuadro de ayuda.</br>
 - Dia 13: Galeria de usuarios.</br>
 - Dia 14: Animación de tarjeta.</br>
+- Dia 15: Subir un archivo.</br>
+- Dia 16: (Por hacer)</br>
+- Dia 17: Triangulo de Penrose.</br>
+- Dia 18: Elasticidad de figura.</br>
+- Dia 19: Menu de cambio de color.</br>
+- Dia 20: Enviar Email.</br>
+- Dia 21: Pack-Man.</br>
+- Dia 22: Seguidor de entrenaminento.</br>
+- Dia 23: Animacion de texto.</br>
