@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800,300");
+
+$primary-color: rgb(172, 56, 56);
+$secondary-color: rgb(236, 227, 227);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $primary-color;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+.container {
+  width: 400px;
+  height: 400px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  color: $secondary-color;
+  .circle {
+    z-index: 12;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    animation: circle 1s ease-in-out forwards;
+  }
+  .line {
+    z-index: 12;
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    background-color: $secondary-color;
+    transform: scaleX(0);
+    &.left {
+      left: 50px;
+      transform-origin: 100% 50%;
+      animation: lines 1s ease-in-out 0.8s, linea-left 1s steps(1) 0.8s;
+    }
+    &.right {
+      right: 50px;
+      transform-origin: 0% 50%;
+      animation: lines 1s ease-in-out 0.8s, linea-right 1s steps(1) 0.8s;
+    }
+  }
+  .bra {
+    z-index: 12;
+    position: absolute;
+    height: 80px;
+    width: 4px;
+    background-color: $secondary-color;
+    animation: bra 0.4s ease-out both 1.7s;
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 25px;
+      height: 4px;
+      background-color: $secondary-color;
+    }
+    &.b1 {
+      left: 50px;
+      &::before {
+        top: 0;
+        left: 0;
+        transform-origin: 0% 50%;
+        animation: bracket-line 0.2s ease-out both 2.1s;
+      }
+      &::after {
+        bottom: 0;
+        left: 0;
+        transform-origin: 0% 50%;
+        animation: bracket-line 0.2s ease-out both 2.1s;
+      }
+    }
+    &.b2 {
+      right: 50px;
+      &::before {
+        top: 0;
+        right: 0;
+        transform-origin: 100% 50%;
+        animation: bracket-line 0.2s ease-out both 2.1s;
+      }
+      &::after {
+        bottom: 0;
+        right: 0;
+        transform-origin: 100% 50%;
+        animation: bracket-line 0.2s ease-out both 2.1s;
+      }
+    }
+  }
+  .title {
+    z-index: 10;
+    font-size: 28px;
+    &.top {
+      animation: title-top 0.6s ease-out both 2.7s;
+    }
+    &.bot {
+      animation: title-bot 0.6s ease-out both 2.7s;
+    }
+  }
+  .mid {
+    z-index: 10;
+    line-height: 56px;
+    font-size: 50px;
+    font-weight: 800;
+  }
+  .block {
+    z-index: 11;
+    position: absolute;
+    // border: 1px solid blue;
+    width: 400px;
+    height: 200px;
+    background-color: $primary-color;
+    &.top {
+      transform-origin: 50% 0%;
+      animation: blo 1s ease-out both 2s;
+    }
+    &.bot {
+      transform-origin: 50% 100%;
+      animation: blo 1s ease-out both 2s;
+    }
+  }
+}
+@keyframes circle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  80%,
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lines {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@keyframes linea-left {
+  0% {
+    transform-origin: 100% 50%;
+  }
+  50%,
+  100% {
+    transform-origin: 0% 50%;
+  }
+}
+@keyframes linea-right {
+  0% {
+    transform-origin: 0% 50%;
+  }
+  50%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+}
+@keyframes bra {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes bracket-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes blo {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+@keyframes title-top {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes title-bot {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
