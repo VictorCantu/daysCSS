@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
+
+$primary-color: #57d895;
+$secondary-color: rgb(228, 245, 228);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $primary-color;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  .btn {
+    position: relative;
+    z-index: 3;
+    width: 300px;
+    height: 64px;
+    border-radius: 32px;
+    border: 3px solid $secondary-color;
+    background-color: transparent;
+    color: $secondary-color;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.8s ease;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    img {
+      position: absolute;
+      width: 32px;
+      z-index: 3;
+      opacity: 0;
+      top: 14px;
+      left: 14px;
+    }
+  }
+  .circle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    z-index: 4;
+    // background-color: red;
+    fill: none;
+    stroke: $secondary-color;
+    stroke-width: 4px;
+    stroke-linecap: round;
+    stroke-dasharray: 190 190;
+    stroke-dashoffset: 190;
+    pointer-events: none;
+    transform: rotate(-90deg);
+  }
+}
+@keyframes button {
+  0% {
+    width: 300px;
+    border: 3px solid $secondary-color;
+  }
+  100% {
+    width: 64px;
+    border: 3px solid #27774e;
+  }
+}
+@keyframes icon {
+  0% {
+    opacity: 0;
+  }
+  90%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes back {
+  0% {
+    background-color: transparent;
+  }
+  90%,
+  100% {
+    background-color: $secondary-color;
+  }
+}
+@keyframes txt {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes circle {
+  0% {
+    stroke-dashoffset: 190;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 190;
+    transform: rotate(-90deg) scale(1);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    stroke-dasharray: 500 500;
+    transform: rotate(-90deg) scale(2);
+    opacity: 0;
+  }
+}
