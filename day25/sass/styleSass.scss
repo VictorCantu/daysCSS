@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(17, 88, 194);
+}
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .circle {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    background-color: rgb(44, 113, 218);
+  }
+  .flip {
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: 2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .point {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 4px;
+      width: 50px;
+      height: 90px;
+      backface-visibility: hidden;
+      //   background-color: aqua;
+      z-index: 2;
+      transform: rotateY(0);
+      animation: point 1.5s ease-in-out infinite;
+      pointer-events: all;
+      .icon {
+        color: orange;
+        cursor: pointer;
+      }
+      .point-shadow {
+        width: 24px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: rgb(31, 98, 199);
+        animation: point-shadow 1.5s ease-in-out infinite;
+      }
+    }
+    .info {
+      @extend .point;
+      width: 300px;
+      height: 300px;
+      z-index: 1;
+      background-color: red;
+      transform: rotateY(180deg);
+      animation: none;
+    }
+    &.active {
+      transform: rotateY(180deg);
+    }
+    .info {
+      width: 300px;
+      height: 250px;
+      background-color: wheat;
+      display: flex;
+      justify-content: space-between;
+      .top {
+        width: 100%;
+        img {
+          width: 300px;
+          height: 80px;
+        }
+      }
+      .mid {
+        font-size: 12px;
+        text-align: center;
+      }
+      .bot {
+        width: 100%;
+        .buttons {
+          width: 100%;
+          position: relative;
+        }
+        .line {
+          position: absolute;
+          width: 1px;
+          height: 20px;
+          top: 5px;
+          background-color: rgb(44, 113, 218);
+          left: 50%;
+        }
+        a {
+          float: left;
+          width: 50%;
+          text-align: center;
+          color: rgb(44, 113, 218);
+          text-decoration: none;
+          font-size: 12px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+@keyframes point {
+  0%,
+  100% {
+    gap: 4px;
+  }
+  50% {
+    gap: 8px;
+  }
+}
+@keyframes point-shadow {
+  0%,
+  100% {
+    transform: scaleX(0.5);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+}
