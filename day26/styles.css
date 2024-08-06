@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600,400");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #b3a9a9;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.6);
+}
+.container .card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+  height: 150px;
+  background-color: #665d5d;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 4px;
+  color: #998f8f;
+}
+.container .card::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  top: -40px;
+  width: 0;
+  height: 0;
+  border-left: 45px solid #665d5d;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
+  transform: rotate(-45deg);
+  z-index: 10;
+}
+.container .card .number {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  z-index: 11;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.container .card .btn {
+  width: 100%;
+  border: none;
+  background-color: rgb(0, 153, 255);
+  border-radius: 0px;
+  padding: 8px 0px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.container .card .txt {
+  flex: 1;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 24px;
+  background-color: #fff;
+}
+.container .card .txt .title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #665d5d;
+}
+.container .card .txt .info {
+  font-size: 12px;
+  font-weight: 400;
+}
+.container .card.c1 {
+  z-index: 3;
+}
+.container .card.c1.active {
+  animation: act 1s ease-in-out forwards;
+}
+.container .card.c1.inactive {
+  animation: inact 1s ease-in-out forwards;
+}
+.container .card.c2 {
+  z-index: 2;
+  opacity: 0;
+}
+.container .card.c2.active {
+  animation: act 1s ease-in-out forwards;
+}
+.container .card.c2.inactive {
+  animation: inact 1s ease-in-out forwards;
+}
+.container .card.c3 {
+  z-index: 1;
+  opacity: 0;
+}
+.container .card.c3.active {
+  animation: act 1s ease-in-out forwards;
+}
+.container .card.c3.inactive {
+  animation: inact 1s ease-in-out forwards;
+}
+
+@keyframes act {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes inact {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
