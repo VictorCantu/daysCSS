@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(53, 131, 53);
+}
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.6);
+  svg {
+    width: 400px;
+    height: 64px;
+    // background-color: red;
+    fill: none;
+    stroke: white;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    animation: line 2.5s linear infinite;
+  }
+  .circle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 1px solid white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: circle 2.5s linear infinite;
+  }
+}
+@keyframes line {
+  from {
+    stroke-dasharray: 50 660;
+    stroke-dashoffset: 780;
+  }
+  to {
+    stroke-dasharray: 50 660;
+    stroke-dashoffset: 70;
+  }
+}
+@keyframes circle {
+  0%,
+  50% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
