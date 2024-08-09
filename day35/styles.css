@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body {
+  background-color: rgb(37, 37, 37);
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0px 0px 24px rgba(255, 255, 255, 0.2);
+}
+.container .innerCircle {
+  width: 200px;
+  height: 200px;
+  stroke: #161515;
+  stroke-width: 3px;
+  fill: none;
+}
+.container .load {
+  position: absolute;
+  filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
+  width: 200px;
+  height: 200px;
+  stroke: #beb8b8;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 312;
+  animation: loader 4s linear infinite, spin 4s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    stroke-dashoffset: 1248;
+  }
+  100% {
+    stroke-dashoffset: 624;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
