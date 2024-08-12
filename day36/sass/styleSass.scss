@@ -1,0 +1,129 @@
+@use "../../resetSass/resetSass";
+
+$primary-color: rgb(69, 240, 35);
+$secondary-color: rgb(54, 53, 53);
+
+body {
+  background-color: rgb(37, 37, 37);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.6);
+  .content {
+    width: 350px;
+    height: 250px;
+    // background-color: $primary-color;
+    background-color: white;
+    .top {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      background-color: $secondary-color;
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: all 0.8s ease-out;
+        // background-color: blue;
+        &:hover {
+          color: white;
+        }
+        svg {
+          width: 20px;
+          height: auto;
+        }
+        &.active {
+          color: white;
+          background-color: gray;
+        }
+      }
+    }
+    .info {
+      position: relative;
+      width: 350px;
+      height: 210px;
+      padding: 24px;
+      .dashboard {
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        color: rgb(39, 37, 37);
+        top: 48px;
+        transition: all 0.8s ease-in;
+        &.active {
+          top: 24px;
+          opacity: 1;
+          //   display: block;
+        }
+        .lines {
+          margin-top: 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          .line1 {
+            width: 280px;
+            height: 4px;
+            background-color: rgba(128, 128, 128, 0.432);
+          }
+          .line2 {
+            @extend .line1;
+            width: 250px;
+          }
+          .line3 {
+            @extend .line1;
+            width: 270px;
+          }
+          .line4 {
+            @extend .line1;
+            width: 230px;
+          }
+          .line5 {
+            @extend .line1;
+            width: 100px;
+          }
+        }
+      }
+      .comments {
+        @extend .dashboard;
+        z-index: 2;
+        opacity: 0;
+        // display: none;
+        // transition: all 0.8s ease-in;
+      }
+      .notifications {
+        @extend .dashboard;
+        z-index: 3;
+        opacity: 0;
+        // display: none;
+        // transition: all 0.8s ease-in;
+      }
+      .settings {
+        @extend .dashboard;
+        z-index: 4;
+        opacity: 0;
+        // display: none;
+        // transition: all 0.8s ease-in;
+      }
+    }
+  }
+}
+@keyframes show {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

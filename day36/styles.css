@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body {
+  background-color: rgb(37, 37, 37);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.6);
+}
+.container .content {
+  width: 350px;
+  height: 250px;
+  background-color: white;
+}
+.container .content .top {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: rgb(54, 53, 53);
+}
+.container .content .top .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.8s ease-out;
+}
+.container .content .top .icon:hover {
+  color: white;
+}
+.container .content .top .icon svg {
+  width: 20px;
+  height: auto;
+}
+.container .content .top .icon.active {
+  color: white;
+  background-color: gray;
+}
+.container .content .info {
+  position: relative;
+  width: 350px;
+  height: 210px;
+  padding: 24px;
+}
+.container .content .info .dashboard, .container .content .info .settings, .container .content .info .notifications, .container .content .info .comments {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  color: rgb(39, 37, 37);
+  top: 48px;
+  transition: all 0.8s ease-in;
+}
+.container .content .info .dashboard.active, .container .content .info .active.settings, .container .content .info .active.notifications, .container .content .info .active.comments {
+  top: 24px;
+  opacity: 1;
+}
+.container .content .info .dashboard .lines, .container .content .info .settings .lines, .container .content .info .notifications .lines, .container .content .info .comments .lines {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.container .content .info .dashboard .lines .line1, .container .content .info .settings .lines .line1, .container .content .info .notifications .lines .line1, .container .content .info .comments .lines .line1, .container .content .info .dashboard .lines .line5, .container .content .info .settings .lines .line5, .container .content .info .notifications .lines .line5, .container .content .info .comments .lines .line5, .container .content .info .dashboard .lines .line4, .container .content .info .settings .lines .line4, .container .content .info .notifications .lines .line4, .container .content .info .comments .lines .line4, .container .content .info .dashboard .lines .line3, .container .content .info .settings .lines .line3, .container .content .info .notifications .lines .line3, .container .content .info .comments .lines .line3, .container .content .info .dashboard .lines .line2, .container .content .info .settings .lines .line2, .container .content .info .notifications .lines .line2, .container .content .info .comments .lines .line2 {
+  width: 280px;
+  height: 4px;
+  background-color: rgba(128, 128, 128, 0.432);
+}
+.container .content .info .dashboard .lines .line2, .container .content .info .settings .lines .line2, .container .content .info .notifications .lines .line2, .container .content .info .comments .lines .line2 {
+  width: 250px;
+}
+.container .content .info .dashboard .lines .line3, .container .content .info .settings .lines .line3, .container .content .info .notifications .lines .line3, .container .content .info .comments .lines .line3 {
+  width: 270px;
+}
+.container .content .info .dashboard .lines .line4, .container .content .info .settings .lines .line4, .container .content .info .notifications .lines .line4, .container .content .info .comments .lines .line4 {
+  width: 230px;
+}
+.container .content .info .dashboard .lines .line5, .container .content .info .settings .lines .line5, .container .content .info .notifications .lines .line5, .container .content .info .comments .lines .line5 {
+  width: 100px;
+}
+.container .content .info .comments {
+  z-index: 2;
+  opacity: 0;
+}
+.container .content .info .notifications {
+  z-index: 3;
+  opacity: 0;
+}
+.container .content .info .settings {
+  z-index: 4;
+  opacity: 0;
+}
+
+@keyframes show {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
