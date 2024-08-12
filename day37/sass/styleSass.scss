@@ -1,0 +1,71 @@
+@use "../../resetSass/resetSass";
+
+body {
+  background-color: rgb(23, 22, 22);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 24px rgba(0, 0, 0, 0.6);
+  transform: perspective(30px);
+  transform-style: preserve-3d;
+  .ball {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: inset 8px -8px 40px rgba(0, 0, 0, 0.8);
+    &.b1 {
+      animation: ball1 5s ease-in-out infinite both;
+    }
+    &.b2 {
+      animation: ball2 5s ease-in-out infinite both;
+    }
+    &.b3 {
+      animation: ball3 5s ease-in-out infinite both;
+    }
+  }
+}
+
+@keyframes ball1 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+  33.33% {
+    transform: translate3d(180px, 0, -40px) rotate(180deg);
+  }
+  66.66% {
+    transform: translate3d(-180px, 0, -40px) rotate(-180deg);
+  }
+}
+@keyframes ball2 {
+  0%,
+  100% {
+    transform: translate3d(180px, 0, -40px);
+  }
+  33.33% {
+    transform: translate3d(-180px, 0, -40px);
+  }
+  66.66% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+@keyframes ball3 {
+  0%,
+  100% {
+    transform: translate3d(-180px, 0, -40px);
+  }
+  33.33% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  66.66% {
+    transform: translate3d(180px, 0, -40px);
+  }
+}
