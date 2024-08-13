@@ -1,0 +1,97 @@
+@use "../../resetSass/resetSass";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800,600,400,300");
+
+body {
+  background-color: rgb(25, 25, 25);
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 24px rgba(89, 255, 0, 0.6);
+  .content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 300px;
+    height: 260px;
+    background-color: rgb(42, 42, 42);
+    // border: 2px solid #00ff1a;
+    border-radius: 4px;
+    animation: show 0.8s ease both;
+    &.active {
+      animation: hid 0.7s ease both;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      width: 300px;
+      text-align: center;
+      font-size: 14px;
+      color: wheat;
+      gap: 12px;
+      //   background-color: red;
+      h2 {
+        font-size: 28px;
+        font-weight: 800;
+      }
+      .keep {
+        font-size: 14px;
+        font-weight: 600;
+      }
+      svg {
+        width: 48px;
+        height: 48px;
+        stroke: #00ff1a;
+        filter: drop-shadow(0px 0px 8px #00ff1aae);
+      }
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 40px;
+      text-align: center;
+      color: #ffffff;
+      background-color: #02c015;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        background-color: #01920f;
+      }
+    }
+  }
+}
+@keyframes show {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes hid {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
