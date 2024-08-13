@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body {
+  background-color: purple;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  cursor: pointer;
+}
+.container .big {
+  z-index: 2;
+  position: absolute;
+  fill: white;
+  transform: scale(1);
+  transition: all 0.5s ease-out 0.3s;
+}
+.container .big.active {
+  transform: scale(10);
+  transition: all 0.5s ease-in;
+}
+.container .small {
+  z-index: 3;
+  position: absolute;
+  fill: purple;
+  transform: scale(0);
+  transition: all 0.5s ease-in;
+}
+.container .small.active {
+  transform: scale(1);
+  transition: all 0.5s ease-out 0.3s;
+}
