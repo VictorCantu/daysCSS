@@ -1,0 +1,211 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body {
+  background-color: rgb(32, 32, 32);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  border: 2px solid rgba(236, 234, 234, 0.4);
+  position: relative;
+}
+.container:hover .cubes .stop {
+  animation-play-state: paused;
+}
+.container .cubes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .cube-1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.0333333333s alternate infinite;
+}
+.container .cube-2 {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.0666666667s alternate infinite;
+}
+.container .cube-3 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.1s alternate infinite;
+}
+.container .cube-4 {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.1333333333s alternate infinite;
+}
+.container .cube-5 {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.1666666667s alternate infinite;
+}
+.container .cube-6 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.2s alternate infinite;
+}
+.container .cube-7 {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.2333333333s alternate infinite;
+}
+.container .cube-8 {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.2666666667s alternate infinite;
+}
+.container .cube-9 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.3s alternate infinite;
+}
+.container .cube-10 {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.3333333333s alternate infinite;
+}
+.container .cube-11 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.3666666667s alternate infinite;
+}
+.container .cube-12 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.4s alternate infinite;
+}
+.container .cube-13 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.4333333333s alternate infinite;
+}
+.container .cube-14 {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.4666666667s alternate infinite;
+}
+.container .cube-15 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.5s alternate infinite;
+}
+.container .cube-16 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.5333333333s alternate infinite;
+}
+.container .cube-17 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.5666666667s alternate infinite;
+}
+.container .cube-18 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.6s alternate infinite;
+}
+.container .cube-19 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.6333333333s alternate infinite;
+}
+.container .cube-20 {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(32, 32, 32);
+  border: 1px solid white;
+  animation: turn 2s ease-in-out 0.6666666667s alternate infinite;
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
