@@ -1,0 +1,26 @@
+@use "../../resetSass/resetSass";
+
+body {
+  background-color: rgb(25, 25, 25);
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  .cube {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff92;
+    cursor: pointer;
+    &.active {
+      background-color: #ececec;
+      &:hover {
+        background-color: #ececec;
+      }
+    }
+    &:hover {
+      background-color: #ffffff2b;
+    }
+  }
+}
