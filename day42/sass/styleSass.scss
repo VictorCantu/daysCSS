@@ -1,0 +1,58 @@
+@use "../../resetSass/resetSass";
+
+body {
+  background-color: rgb(21, 20, 20);
+}
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgb(74, 119, 115);
+  background: linear-gradient(
+    0deg,
+    rgba(74, 119, 115, 1) 0%,
+    rgba(45, 37, 159, 1) 100%
+  );
+  .star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 1px;
+    background-color: white;
+  }
+  .shooting-star {
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    top: 0px;
+    left: 0px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    animation: shooting 4s linear infinite;
+  }
+}
+@keyframes shine {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes shooting {
+  0%,
+  70% {
+    transform: translate3d(-80px, 10px, 0) rotate(20deg);
+  }
+  100% {
+    transform: translate3d(400px, 180px, 0) rotate(20deg);
+  }
+}
