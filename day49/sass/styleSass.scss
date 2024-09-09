@@ -1,0 +1,65 @@
+@use "../../resetSass/resetSass";
+body {
+  background-color: rgb(15, 15, 15);
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #eee;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .egg {
+    width: 100px;
+    height: 130px;
+    border-radius: 50px 50px 50px 50px / 80px 80px 50px 50px;
+    background-color: #fff;
+    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.6);
+    animation: egg 3s ease-in-out infinite;
+  }
+}
+
+@keyframes egg {
+  0% {
+    transform: scale(0.8, 1.2) translate3d(0, -300px, 0);
+  }
+  25% {
+    transform: scale(1.1, 0.8) translate3d(0, 30px, 0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translate3d(0, -15px, 0);
+  }
+  35% {
+    transform: scale(1, 1) translate3d(0, 10px, 0);
+  }
+  40%,
+  45% {
+    transform: scale(1, 1) translate3d(0, 0px, 0) rotate(0);
+  }
+  50% {
+    transform: scale(1, 1) translate3d(0, 0px, 0) rotate(8deg);
+  }
+  55% {
+    transform: scale(1, 1) translate3d(0, 0px, 0) rotate(-8deg);
+  }
+  60% {
+    transform: scale(1, 1) translate3d(0, 0px, 0) rotate(8deg);
+  }
+  65%,
+  70% {
+    transform: scale(1, 1) translate3d(0, 0px, 0) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.1, 1) translate3d(0, 10px, 0) rotate(0deg);
+  }
+  80% {
+    transform: scale(1, 1) translate3d(0, -20px, 0) rotate(0deg);
+  }
+  100% {
+    transform: scale(1, 1) translate3d(0, 300px, 0) rotate(0deg);
+  }
+}
