@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body {
+  background-color: rgb(0, 24, 0);
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+.container .wave {
+  position: absolute;
+  width: 500px;
+  height: 150px;
+  left: -50px;
+}
+.container .wave .circle {
+  position: relative;
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  top: -24px;
+}
+.container .wave .circle:nth-child(even) {
+  top: -26px;
+}
+.container .wave-top {
+  top: 225px;
+  background-color: rgb(0, 94, 0);
+  animation: wave-top 4s ease-in-out alternate infinite;
+}
+.container .wave-top .circle {
+  background-color: rgb(0, 94, 0);
+}
+.container .wave-top .circle:nth-child(even) {
+  background-color: rgb(0, 24, 0);
+}
+.container .wave-mid {
+  top: 280px;
+  background-color: rgb(12, 124, 12);
+  animation: wave-mid 4s ease-in-out alternate infinite;
+}
+.container .wave-mid .circle {
+  background-color: rgb(12, 124, 12);
+}
+.container .wave-mid .circle:nth-child(even) {
+  background-color: rgb(0, 94, 0);
+}
+.container .wave-bot {
+  top: 335px;
+  background-color: rgb(30, 143, 30);
+  animation: wave-bot 4s ease-in-out alternate infinite;
+}
+.container .wave-bot .circle {
+  background-color: rgb(30, 143, 30);
+}
+.container .wave-bot .circle:nth-child(even) {
+  background-color: rgb(12, 124, 12);
+}
+
+@keyframes wave-top {
+  from {
+    transform: translate3d(-20px, 0, 0);
+  }
+  to {
+    transform: translate3d(20px, 0, 0);
+  }
+}
+@keyframes wave-mid {
+  from {
+    transform: translate3d(10px, 0, 0);
+  }
+  to {
+    transform: translate3d(-10px, 0, 0);
+  }
+}
+@keyframes wave-bot {
+  from {
+    transform: translate3d(-50px, 0, 0);
+  }
+  to {
+    transform: translate3d(50px, 0, 0);
+  }
+}
