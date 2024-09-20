@@ -1,0 +1,101 @@
+@use "../../resetSass/resetSass";
+$leafShadow: -5px -5px 1px 0 rgba(0, 0, 0, 0.06);
+body {
+  background-color: rgb(17, 17, 17);
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid pink;
+  position: relative;
+  .sakura {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: sakuraF 7s ease infinite;
+    transition: all 0.5s ease-in-out;
+    .center {
+      position: absolute;
+      z-index: 5;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      background-color: rgb(204, 102, 119);
+      transform: scale(0);
+      animation: center 7s ease infinite;
+    }
+    .petal {
+      position: absolute;
+      z-index: 1;
+      width: 50px;
+      height: 50px;
+      border-radius: 2px 50px;
+      background-color: pink;
+      opacity: 0.8;
+      &:nth-child(2n + 2) {
+        z-index: 2;
+      }
+    }
+  }
+}
+@for $i from 1 through 16 {
+  $angle: 360/16;
+  $initial: ($i * (45/16)) + 10;
+  #petal-#{$i} {
+    animation: petals-#{$i} 7s ease infinite;
+  }
+  @keyframes petals-#{$i} {
+    0%,
+    100% {
+      transform: rotate(($i * $angle) + deg) scale(1) translateY(0);
+    }
+    #{$initial}% {
+      transform: rotate(($i * $angle) + deg) translate(-35px, -35px) scale(2);
+    }
+    60% {
+      transform: rotate(($i * $angle) + deg) translate(-35px, -35px) scale(2);
+    }
+    75% {
+      transform: rotate(($i * $angle) + deg) translate(-35px, -35px) scale(2);
+    }
+  }
+}
+
+@keyframes sakuraF {
+  0% {
+    transform: rotate(0);
+  }
+  60% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes center {
+  12% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: scale(0.95);
+  }
+  30%,
+  55% {
+    transform: scale(1);
+  }
+  57.9% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0);
+  }
+}
