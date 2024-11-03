@@ -22,3 +22,39 @@
 - Dia 21: Pack-Man.</br>
 - Dia 22: Seguidor de entrenaminento.</br>
 - Dia 23: Animacion de texto.</br>
+- Dia 24: Boton animado.</br>
+- Dia 25: Marcador de Mapa.</br>
+- Dia 26: Modal animado.</br>
+- Dia 27: Lista de tareas.</br>
+- Dia 28: Alarma animada.</br>
+- Dia 29: Buscador.</br>
+- Dia 30: Viento.</br>
+- Dia 31: Pendulo.</br>
+- Dia 32: Contador.</br>
+- Dia 33: Noche animada.</br>
+- Dia 34: (Por hacer).</br>
+- Dia 35: Cargando.</br>
+- Dia 36: Navegación.</br>
+- Dia 37: Carrusel.</br>
+- Dia 38: Logo animado.</br>
+- Dia 39: Menu animado.</br>
+- Dia 40: (Por hacer).</br>
+- Dia 41: Alerta.</br>
+- Dia 42: Estrellas.</br>
+- Dia 43: Bombilla.</br>
+- Dia 44: Efecto giratorio.</br>
+- Dia 45: Efecto de Hover.</br>
+- Dia 46: (Por hacer).</br>
+- Dia 47: Pixel Art.</br>
+- Dia 48: Cubo 3D.</br>
+- Dia 49: (Por hacer).</br>
+- Dia 50: Huevo animado.</br>
+- Dia 51: Contador automatico.</br>
+- Dia 52: (Por hacer).</br>
+- Dia 53: Rango.</br>
+- Dia 54: Olas.</br>
+- Dia 55: Termostato.</br>
+- Dia 56: Flor de Cerezo.</br>
+
+
+
